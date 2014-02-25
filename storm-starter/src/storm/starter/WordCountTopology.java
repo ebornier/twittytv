@@ -1,5 +1,9 @@
 package storm.starter;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import storm.starter.spout.RandomSentenceSpout;
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.StormSubmitter;
@@ -12,10 +16,6 @@ import backtype.storm.topology.base.BaseBasicBolt;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
-import storm.starter.spout.RandomSentenceSpout;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * This topology demonstrates Storm's stream groupings and multilang capabilities.

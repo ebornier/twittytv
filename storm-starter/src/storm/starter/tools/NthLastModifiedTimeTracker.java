@@ -1,7 +1,8 @@
 package storm.starter.tools;
 
-import backtype.storm.utils.Time;
 import org.apache.commons.collections.buffer.CircularFifoBuffer;
+
+import backtype.storm.utils.Time;
 
 /**
  * This class tracks the time-since-last-modify of a "thing" in a rolling fashion.

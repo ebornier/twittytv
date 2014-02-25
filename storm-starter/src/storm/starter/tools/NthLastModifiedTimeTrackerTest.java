@@ -1,10 +1,11 @@
 package storm.starter.tools;
 
-import backtype.storm.utils.Time;
+import static org.fest.assertions.Assertions.assertThat;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static org.fest.assertions.Assertions.assertThat;
+import backtype.storm.utils.Time;
 
 public class NthLastModifiedTimeTrackerTest {
 

@@ -1,11 +1,11 @@
 package storm.starter.tools;
 
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import static org.fest.assertions.Assertions.assertThat;
 
 import java.util.Map;
 
-import static org.fest.assertions.Assertions.assertThat;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 public class SlidingWindowCounterTest {
 

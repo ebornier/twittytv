@@ -1,13 +1,13 @@
 package storm.starter;
 
-import backtype.storm.Config;
-import backtype.storm.testing.TestWordSpout;
-import backtype.storm.topology.TopologyBuilder;
-import backtype.storm.tuple.Fields;
 import storm.starter.bolt.IntermediateRankingsBolt;
 import storm.starter.bolt.RollingCountBolt;
 import storm.starter.bolt.TotalRankingsBolt;
 import storm.starter.util.StormRunner;
+import backtype.storm.Config;
+import backtype.storm.testing.TestWordSpout;
+import backtype.storm.topology.TopologyBuilder;
+import backtype.storm.tuple.Fields;
 
 /**
  * This topology does a continuous computation of the top N words that the topology has seen in terms of cardinality.

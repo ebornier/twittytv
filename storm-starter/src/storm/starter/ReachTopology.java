@@ -1,5 +1,12 @@
 package storm.starter;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.LocalDRPC;
@@ -14,8 +21,6 @@ import backtype.storm.topology.base.BaseBatchBolt;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
-
-import java.util.*;
 
 /**
  * This is a good example of doing complex Distributed RPC on top of Storm. This program creates a topology that can

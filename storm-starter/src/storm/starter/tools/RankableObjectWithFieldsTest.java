@@ -1,17 +1,20 @@
 package storm.starter.tools;
 
-import backtype.storm.tuple.Tuple;
-import com.google.common.collect.Lists;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import static org.fest.assertions.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.fest.assertions.Assertions.assertThat;
-import static org.mockito.Mockito.*;
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import backtype.storm.tuple.Tuple;
+
+import com.google.common.collect.Lists;
 
 public class RankableObjectWithFieldsTest {
 

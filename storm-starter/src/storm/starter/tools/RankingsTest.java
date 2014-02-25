@@ -1,15 +1,16 @@
 package storm.starter.tools;
 
-import com.google.common.base.Throwables;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
+import static org.fest.assertions.Assertions.assertThat;
+
+import java.util.List;
+
 import org.jmock.lib.concurrent.Blitzer;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.util.List;
-
-import static org.fest.assertions.Assertions.assertThat;
+import com.google.common.base.Throwables;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 
 public class RankingsTest {
 

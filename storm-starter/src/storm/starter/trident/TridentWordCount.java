@@ -1,12 +1,5 @@
 package storm.starter.trident;
 
-import backtype.storm.Config;
-import backtype.storm.LocalCluster;
-import backtype.storm.LocalDRPC;
-import backtype.storm.StormSubmitter;
-import backtype.storm.generated.StormTopology;
-import backtype.storm.tuple.Fields;
-import backtype.storm.tuple.Values;
 import storm.trident.TridentState;
 import storm.trident.TridentTopology;
 import storm.trident.operation.BaseFunction;
@@ -18,10 +11,18 @@ import storm.trident.operation.builtin.Sum;
 import storm.trident.testing.FixedBatchSpout;
 import storm.trident.testing.MemoryMapState;
 import storm.trident.tuple.TridentTuple;
+import backtype.storm.Config;
+import backtype.storm.LocalCluster;
+import backtype.storm.LocalDRPC;
+import backtype.storm.StormSubmitter;
+import backtype.storm.generated.StormTopology;
+import backtype.storm.tuple.Fields;
+import backtype.storm.tuple.Values;
 
 
 public class TridentWordCount {
-  public static class Split extends BaseFunction {
+  
+	public static class Split extends BaseFunction {
     @Override
     public void execute(TridentTuple tuple, TridentCollector collector) {
       String sentence = tuple.getString(0);

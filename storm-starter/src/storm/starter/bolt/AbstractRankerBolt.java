@@ -1,5 +1,12 @@
 package storm.starter.bolt;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+
+import storm.starter.tools.Rankings;
+import storm.starter.util.TupleHelpers;
 import backtype.storm.Config;
 import backtype.storm.topology.BasicOutputCollector;
 import backtype.storm.topology.OutputFieldsDeclarer;
@@ -7,12 +14,6 @@ import backtype.storm.topology.base.BaseBasicBolt;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
-import org.apache.log4j.Logger;
-import storm.starter.tools.Rankings;
-import storm.starter.util.TupleHelpers;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * This abstract bolt provides the basic behavior of bolts that rank objects according to their count.

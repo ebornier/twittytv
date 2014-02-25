@@ -1,5 +1,11 @@
 package storm.starter;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.coordination.BatchOutputCollector;
@@ -14,12 +20,6 @@ import backtype.storm.transactional.TransactionalTopologyBuilder;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
-
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * This is a basic example of a transactional topology. It keeps a count of the number of tuples seen so far in a

@@ -21,13 +21,13 @@ public class NormalizeTweetBolt extends BaseRichBolt {
 
 	    @Override
 	    public void execute(Tuple tuple) {
-	      _collector.emit(tuple, new Values(tuple.getString(0) + "!!!"));
+	      _collector.emit(tuple, new Values(tuple.getStringByField("text") + "!!!"));
 	      _collector.ack(tuple);
 	    }
 
 	    @Override
 	    public void declareOutputFields(OutputFieldsDeclarer declarer) {
-	      declarer.declare(new Fields("word"));
+	      declarer.declare(new Fields("text"));
 	    }
 	
 }

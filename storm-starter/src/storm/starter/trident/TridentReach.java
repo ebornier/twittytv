@@ -1,12 +1,11 @@
 package storm.starter.trident;
 
-import backtype.storm.Config;
-import backtype.storm.LocalCluster;
-import backtype.storm.LocalDRPC;
-import backtype.storm.generated.StormTopology;
-import backtype.storm.task.IMetricsContext;
-import backtype.storm.tuple.Fields;
-import backtype.storm.tuple.Values;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import storm.trident.TridentState;
 import storm.trident.TridentTopology;
 import storm.trident.operation.BaseFunction;
@@ -19,8 +18,13 @@ import storm.trident.state.State;
 import storm.trident.state.StateFactory;
 import storm.trident.state.map.ReadOnlyMapState;
 import storm.trident.tuple.TridentTuple;
-
-import java.util.*;
+import backtype.storm.Config;
+import backtype.storm.LocalCluster;
+import backtype.storm.LocalDRPC;
+import backtype.storm.generated.StormTopology;
+import backtype.storm.task.IMetricsContext;
+import backtype.storm.tuple.Fields;
+import backtype.storm.tuple.Values;
 
 public class TridentReach {
   public static Map<String, List<String>> TWEETERS_DB = new HashMap<String, List<String>>() {{

@@ -1,9 +1,9 @@
 package storm.starter.tools;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import backtype.storm.Constants;
 import backtype.storm.tuple.Tuple;
-
-import static org.mockito.Mockito.*;
 
 public final class MockTupleHelpers {
 

@@ -1,21 +1,26 @@
 package storm.starter.bolt;
 
+import static org.fest.assertions.Assertions.assertThat;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyZeroInteractions;
+import static org.mockito.Mockito.when;
+
+import java.util.Map;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import storm.starter.tools.MockTupleHelpers;
+import storm.starter.tools.Rankings;
 import backtype.storm.Config;
 import backtype.storm.topology.BasicOutputCollector;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-import storm.starter.tools.MockTupleHelpers;
-import storm.starter.tools.Rankings;
-
-import java.util.Map;
-
-import static org.fest.assertions.Assertions.assertThat;
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.*;
 
 public class TotalRankingsBoltTest {
 
