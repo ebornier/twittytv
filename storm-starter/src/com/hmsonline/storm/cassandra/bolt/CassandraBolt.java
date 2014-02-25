@@ -69,7 +69,8 @@ public abstract class CassandraBolt<K, C, V> implements Serializable {
     }
 
     public void writeTuples(List<Tuple> inputs, TupleMapper<K, C, V> tupleMapper) throws Exception {
-        this.client.writeTuples(inputs, tupleMapper);
+    	System.out.println("writeTuples");
+       this.client.writeTuples(inputs, tupleMapper);
     }
 
     public Map<String, Object> getComponentConfiguration() {

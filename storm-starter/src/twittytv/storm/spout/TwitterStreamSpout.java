@@ -51,7 +51,7 @@ public class TwitterStreamSpout extends BaseRichSpout {
 	    // Connect to the filter endpoint, tracking the term "twitterapi"
 	    Hosts host = new HttpHosts(Constants.STREAM_HOST);
 	    StatusesFilterEndpoint endpoint = new StatusesFilterEndpoint();
-	    endpoint.trackTerms(Lists.newArrayList("bachelor"));
+	    endpoint.trackTerms(Lists.newArrayList("#tpmp"));
 	    	  
 	    // Drop in the oauth credentials for your app, available on dev.twitter.com
 	    Authentication auth = getAuthentication(); 
@@ -74,32 +74,43 @@ public class TwitterStreamSpout extends BaseRichSpout {
 
 	@Override
 	public void nextTuple() {
+//		try {
+//			Thread.sleep(1000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		String id = System.currentTimeMillis() + "";
+//		String text =  "message" + System.currentTimeMillis();
+//		
+//		_collector.emit(new Values(id, text));
 		while (!_client.isDone()) {
-			String message;
-	    	try {
-	    		message = _messages.take();
-	    		
-	    		SimpleJSONScheme jsonScheme = new SimpleJSONScheme();
-	    		List<Object> jsonObjects = jsonScheme.deserialize(message.getBytes());
-	    		JSONObject jsonObject = (JSONObject) jsonObjects.get(0);
-	    		
-	    		String text = (String) jsonObject.get("text");
-	    		
-	    		_collector.emit(new Values(text));
+			
+			    String message ="";
+				try {
+					Thread.sleep(1000);
+					message = _messages.take();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				SimpleJSONScheme jsonScheme = new SimpleJSONScheme();
+				List<Object> jsonObjects = jsonScheme.deserialize(message.getBytes());
+				JSONObject jsonObject = (JSONObject) jsonObjects.get(0);
 				
-	    	
-	    	
-	    	} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				String id =  jsonObject.get("id") + "";
+				String text =  (String) jsonObject.get("text");
+				
+				_collector.emit(new Values(id, text));
+				
 			}
 	    }
-		System.exit(0);
-	}
+		
+	
 
 	@Override
 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
-		 declarer.declare(new Fields("text"));
+		 declarer.declare(new Fields("id", "text"));
 	}
 
 }

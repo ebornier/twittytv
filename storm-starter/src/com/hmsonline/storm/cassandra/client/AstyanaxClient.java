@@ -402,6 +402,7 @@ public class AstyanaxClient<K, C, V> {
             this.addTupleToMutation(input, columnFamily, rowKey, mutation, tupleMapper);
         }
         for(String key : mutations.keySet()) {
+        	System.out.println("key " +key);
             mutations.get(key).execute();
         }
     }

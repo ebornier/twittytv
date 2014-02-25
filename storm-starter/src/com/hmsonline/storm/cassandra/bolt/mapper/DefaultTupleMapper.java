@@ -47,6 +47,14 @@ public class DefaultTupleMapper implements TupleMapper<String, String, String> {
 
     @Override
     public String mapToRowKey(Tuple tuple) {
+    	//TODO REMOVE/ TEMP
+    	for (String field : tuple.getFields().toList()) {
+			System.out.println(field);
+		}
+    	
+    	System.out.println(tuple.getFields());
+    	
+    	
         return tuple.getValueByField(this.rowKeyField).toString();
     }
     
